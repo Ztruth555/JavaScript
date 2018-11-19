@@ -43,6 +43,24 @@ for (let i = 0; i < 2; i++) {
 
 
 
+// let i = 0;
+// while (i < 2) {
+//     let a = prompt("Введите обязательную статью расходов в этом месяце" , ""),
+//         b = prompt("Во сколько обойдётся?", "");
+
+//         if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null
+//             && a !='' && b != '' && a.length < 50) {
+
+//             appData.expences[a] = b;
+//         } else {--i;
+//      }                            
+//      i++;
+
+// }
+
+
+
+
 appData.moneyPerDay = appData.budget/30
 
 alert("Ежедневный бюджет: " + appData.moneyPerDay);
