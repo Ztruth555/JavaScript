@@ -14,7 +14,7 @@ let appData = {
     budget: money,
     timeData: time,                                                                 
     expences: {},                                                                   
-    optionalExpences: {},                                                           
+    optionalExpenses: {},                                                           
     income: [],                                                                     
     savings: true,                                                                
 };
@@ -27,7 +27,7 @@ function addExpenses() {
         if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null     
             && a !='' && b != '' && a.length < 50) {
             console.log("done")
-            appData.expences[a]=b;  
+            appData.expenses[a]=b;  
         } else {--i};                           // i = i - 1                                       
     };
 }
@@ -76,4 +76,4 @@ function chooseOptExpenses() {
 chooseOptExpenses()
 
 
-console.log(appData.optionalExpences);
+console.log(appData.optionalExpenses);
