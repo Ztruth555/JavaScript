@@ -16,10 +16,10 @@ let appData = {
     expences: {},                                                                   
     optionalExpenses: {},                                                           
     income: [],                                                                     
-    savings: true,                                                                
+    savings: false,                                                                
 };
 
-function addExpenses() {
+function detectLevel() {
     for (let i = 0; i < 2; i++) {   
         let a = prompt("Введите обязательную статью расходов в этом месяце" , ""),
             b = prompt("Во сколько обойдётся?", "");
@@ -31,9 +31,11 @@ function addExpenses() {
         } else {--i};                           // i = i - 1                                       
     };
 }
-addExpenses();
+detectLevel();
 
 appData.moneyPerDay = (appData.budget/30).toFixed();
+
+alert.moneyPerDay = (appData.moneyPerDay);
 
 function checkSavings() {
     if (appData.savings == true) {
