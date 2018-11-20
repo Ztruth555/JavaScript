@@ -4,7 +4,7 @@ function start() {
     money = +prompt("Ваш бюджет на месяц?");
     time = prompt("Введите дату в формате YYYY-MM-DD");
 
-    while(isNan(money) || money == "" || money == null) {
+    while(isNaN(money) || money == "" || money == null) {
         money = +prompt("Ваш бюджет на месяц?");
     }
 }
