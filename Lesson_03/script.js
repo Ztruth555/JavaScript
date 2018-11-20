@@ -35,8 +35,6 @@ chooseExpenses();
 
 appData.moneyPerDay = (appData.budget/30).toFixed();
 
-alert("Ежедневный бюджет: " + appData.moneyPerDay);
-
 function checkSavings() {
     if (appData.savings == true) {
         let save = +prompt("Какова сумма накоплений?"),
@@ -47,14 +45,11 @@ function checkSavings() {
     }
 }
 
-checkSavings();
-
 function detectDayBudget() {
     appData.moneyPerDay = (appData.budget/30).toFixed();
 
     alert("Ежедневный бюджет: " + appData.moneyPerDay);
 }
-detectDayBudget();
 
 function detectLevel() {
     if(appData.moneyPerDay < 100) {
@@ -67,7 +62,6 @@ function detectLevel() {
         console.log("Произошла ошибка");
     }
 }
-detectLevel();
 
 function chooseOptExpenses() {
     for (let i = 1; i <= 3; i++) {
