@@ -1,7 +1,7 @@
 let money, time;
 
 function start() {
-    money = +prompt("Ваш бюджет на месяц?");
+    money = +prompt("Ваш бюджет на месяц?", "");
     time = prompt("Введите дату в формате YYYY-MM-DD");
 
     while(isNaN(money) || money == "" || money == null) {
@@ -71,13 +71,12 @@ detectLevel();
 
 function chooseOptExpenses() {
     for (let i = 1; i <= 3; i++) {
-        let optionalExpenses = prompt("Статья необязательных расходов?", "");
-        if ((typeof(optionalExpenses)) === 'string' && (typeof(optionalExpenses)) != '' &&
-        (typeof(optionalExpenses)) != null && optionalExpenses.length < 50) {
-        console.log("done");
-        appData.optionalExpenses[i] = optionalExpenses;
+        let a = prompt("Статья необязательных расходов?", "");
+        if ((typeof(a)) === 'string' && a != "" &&
+        (typeof(a)) != null && a.length < 50) {
+        appData.optionalExpenses[i] = a;
         } else {
             --i}
         }
 }
-chooseOptExpenses();
+console.log(appData.optionalExpences);
