@@ -19,7 +19,7 @@ let appData = {
     savings: true,                                                                
 };
 
-function chooseExpenses() {
+function addExpenses() {
     for (let i = 0; i < 2; i++) {   
         let a = prompt("Введите обязательную статью расходов в этом месяце" , ""),
             b = prompt("Во сколько обойдётся?", "");
@@ -31,7 +31,7 @@ function chooseExpenses() {
         } else {--i};                           // i = i - 1                                       
     };
 }
-chooseExpenses();
+addExpenses();
 
 appData.moneyPerDay = (appData.budget/30).toFixed();
 
@@ -73,4 +73,7 @@ function chooseOptExpenses() {
             --i}
         }
 }
+chooseOptExpenses()
+
+
 console.log(appData.optionalExpences);
