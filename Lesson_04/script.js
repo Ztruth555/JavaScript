@@ -15,7 +15,7 @@ start();
 let appData = {
     budget: money,
     timeData: time,                                                                 
-    expences: {},                                                                   
+    expenses: {},                                                                   
     optionalExpenses: {},                                                           
     income: [],                                                                     
     savings: true,
