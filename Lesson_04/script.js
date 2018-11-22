@@ -19,7 +19,7 @@ let appData = {
     optionalExpenses: {},                                                           
     income: [],                                                                     
     savings: true,
-    chooseExpences: function() {
+    chooseExpenses: function() {
         for (let i = 0; i < 2; i++) {   
             let a = prompt("Введите обязательную статью расходов в этом месяце" , ""),
                 b = prompt("Во сколько обойдётся?", "");
@@ -90,3 +90,10 @@ console.log("Наша программа включает в себя данны
 for (let key in appData) {
     console.log(key)
 }
+
+appData.chooseExpenses();
+appData.detectDayBudget();
+appData.detectLevel();
+appData.checkSavings();
+appData.chooseOptExpenses();
+appData.chooseIncome();
