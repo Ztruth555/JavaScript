@@ -10,7 +10,7 @@ function start() {
         money = +prompt("Ваш бюджет на месяц?");
     }
 }
-start();
+//start();
 
 let appData = {
     budget: money,
@@ -68,21 +68,22 @@ let appData = {
     },
     chooseIncome: function() {
         for (let i = 0; i < 1; i++); {
-        let items = prompt("Что принесёт дополнительный доход? (Перечислите через запятую)", "" );
+            let items = prompt("Что принесёт дополнительный доход? (Перечислите через запятую)", "" );
 
-        if ( (typeof(items)) ==='string' && (typeof(items)) != null && items != '') {
-        appData.income = items.split(", ");
-        appData.income.push(prompt("Может что-то ещё?"));
-        appData.income.sort();
+            if ( (typeof(items)) ==='string' && (typeof(items)) != null && items != '') {
+            appData.income = items.split(", ");
+            appData.income.push(prompt("Может что-то ещё?"));
+            appData.income.sort();
+        
+            } else {--i;}
+        }
         appData.income.forEach(function(item, i, income) {
             let c = i + 1;
-            console.log(c + "Способы доп. заработка" + item);
+            console.log(c + "Способы доп. заработка: " + item);
         });
-    } else {
-        --i;
-    }
-        }
-},
+
+    },
+
 
 }
 
@@ -91,9 +92,9 @@ for (let key in appData) {
     console.log(key)
 }
 
-appData.chooseExpenses();
-appData.detectDayBudget();
-appData.detectLevel();
-appData.checkSavings();
-appData.chooseOptExpenses();
-appData.chooseIncome();
+// appData.chooseExpenses();
+// appData.detectDayBudget();
+// appData.detectLevel();
+// appData.checkSavings();
+// appData.chooseOptExpenses();
+   appData.chooseIncome();
