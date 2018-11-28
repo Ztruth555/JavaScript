@@ -6,7 +6,7 @@ body {
   height: 100vh;
   font-size: 16px;
   font-family: "Futura";
-  background: url(/Lesson_07/2/img/Oboi_ot_Koli_336.jpg);
+  background: url(./img/Oboi_ot_Koli_336.jpg);
 }
 
 .timer {
