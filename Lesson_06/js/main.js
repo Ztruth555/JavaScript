@@ -40,11 +40,11 @@ startBtn.addEventListener('click', function () {
     money = +prompt("Ваш бюджет на месяц?", "");
     countBtn.disabled = false;
 
-    while (isNaN(money) || money == "" || money == null) { //проверка дохода, чтобы оно было числом и не отмахнуться
+    while (isNaN(money) || money == "" || money == null) {                      //проверка дохода, чтобы оно было числом и не отмахнуться
       money = +prompt("Ваш бюджет на месяц?");
     }
-    appData.budget = money; //записываем данные в глобальный объект
-    appData.timeData = time; //передаём значение time
+    appData.budget = money;                                                     //записываем данные в глобальный объект
+    appData.timeData = time;                                                    //передаём значение time
     budgetValue.textContent = money.toFixed();  //доход записываем в это поле
     yearValue.value = new Date(Date.parse(time)).getFullYear(); //в конце вытаскиваем полный год
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
@@ -64,18 +64,30 @@ expensesItem.forEach(function (element, i) {
     });
 });
 
+for (let i = 0; i < optionalExpensesItem.length; i++) {                         // проверка на ввод только русских слов
+    optionalExpensesItem[i].addEventListener('keyup', function () {
+        let x = optionalExpensesItem[i].value.charCodeAt(0);
+        if (x < 122) {
+            alert('Только русские слова!');
+        }
+    });
+}
+
+for (let i = 0; i < expensesItem.length; i++) {                                // проверка на то, что можно вводить только цифры
+    expensesItem[++i];
+    expensesItem[i].type = 'number';
+}
 
 
+expensesBtn.addEventListener('click', function() {                              //при клике запускается функция
+    let sum = 0;                                                                //переменная суммы, которая будет собирать всё что ввел пользователь
 
-expensesBtn.addEventListener('click', function() {    //при клике запускается функция
-    let sum = 0;    //переменная суммы, которая будет собирать всё что ввел пользователь
-
-    for (let i = 0; i < expensesItem.length; i++) {   //проверка
+    for (let i = 0; i < expensesItem.length; i++) {                             //проверка
         let a = expensesItem[i].value,
             b = expensesItem[++i].value;
         if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null     
             && a !='' && b != '' && a.length < 50) {
-            appData.expenses[a] = b; //ключ-значение
+            appData.expenses[a] = b;                                            //ключ-значение
             sum += +b;
             
         } else {
@@ -99,7 +111,7 @@ optionalExpensesItem.forEach(function (element, i) {
     });
     
 
-optionalExpensesBtn.addEventListener('click', function() {
+optionalExpensesBtn.addEventListener('click', function() {                      // необязательные расходы перезаписываются заново
     for (let i = 1; i < optionalExpensesItem.length; i++) {
         let a = optionalExpensesItem[i].value;
         appData.optionalExpenses[i] = a;
