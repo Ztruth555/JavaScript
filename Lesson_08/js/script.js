@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', function() {
 
     'use strict';
+
     let tab = document.querySelectorAll('.info-header-tab'),
         info = document.querySelector('.info-header'),                  //если через классы или теги то []
         tabContent = document.querySelectorAll('.info-tabcontent');
@@ -37,7 +38,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // timer
 
-    let deadline = '2019-10-21';
+    let deadline = '2019-01-30';
 
     function getTimeRemaining(endtime) {                            // Фукнций которая определяет остаток времени и вычленяет оттуда полностью время, 
         let t = Date.parse(endtime) - Date.parse(new Date()),       // часы, минуты и секунды
@@ -47,12 +48,11 @@ window.addEventListener('DOMContentLoaded', function() {
         // hours = Math.floor((t / 1000 / 60 / 60) % 24),
         // days = Math.floor((t / (1000 * 60 * 60 * 24)));
 
-
         return {
             'total': t,
-            'hours': hours,
-            'minutes': minutes,
-            'seconds': seconds
+            'hours': hours.toString(),
+            'minutes': minutes.toString(),
+            'seconds': seconds.toString()
         };
     }
 
@@ -69,29 +69,33 @@ window.addEventListener('DOMContentLoaded', function() {
             minutes.textContent = t.minutes;                        // каждую секунду мы будем получать обновленное кол-во часов
             seconds.textContent = t.seconds;
 
-            //остановить таймер когда мы дойдём до нашего deadline'a
-            if (t.total <= 0) {
+            //чтобы не уходил в минус
+            if (t.total < 0) {
                 clearInterval(timeInterval);
                 hours.textContent = '00';
                 minutes.textContent = '00';
                 seconds.textContent = '00';
-                
             }
-
+                hours.textContent = t.hours.length < 2 ? `0${t.hours}` : t.hours;
+                minutes.textContent = t.minutes.length < 2 ? `0${t.minutes}` : t.minutes;
+                seconds.textContent = t.seconds.length < 2 ? `0${t.seconds}` : t.seconds;
+            
+                
         }
+
     }
 
     setClock('timer', deadline); 
 
     // Modal
 
-    let more = document.querySelector('.more'),         //подробнее
-        overlay = document.querySelector('.overlay'),   //само окно
-        close = document.querySelector('.popup-close'); //крестик
+    let more = document.querySelector('.more'),                     //подробнее
+        overlay = document.querySelector('.overlay'),               //само окно
+        close = document.querySelector('.popup-close');             //крестик
 
     more.addEventListener('click', function() {
         overlay.style.display = 'block';
-        this.classList.add('more-splash');         //небольшая анимация
+        this.classList.add('more-splash');                          //небольшая анимация
         document.body.style.overflow = 'hidden';
 
     });
@@ -102,4 +106,5 @@ window.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = '';
     })
 
+    
 });
