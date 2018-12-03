@@ -75,11 +75,11 @@ window.addEventListener('DOMContentLoaded', function() {
                 hours.textContent = '00';
                 minutes.textContent = '00';
                 seconds.textContent = '00';
-            }
+            } else {
                 hours.textContent = t.hours.length < 2 ? `0${t.hours}` : t.hours;
                 minutes.textContent = t.minutes.length < 2 ? `0${t.minutes}` : t.minutes;
                 seconds.textContent = t.seconds.length < 2 ? `0${t.seconds}` : t.seconds;
-            
+            }
                 
         }
 
