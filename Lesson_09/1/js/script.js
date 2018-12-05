@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', function() {
     setClock('timer', deadline); 
 
     // Modal
-    function Modal() {
+    function modal() {
         let more = document.querySelector('.more'),                     //подробнее
             overlay = document.querySelector('.overlay'),               //само окно
             close = document.querySelector('.popup-close'),             //крестик
@@ -124,6 +124,6 @@ window.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-    Modal();
+    modal();
     
 });

@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', function() {
     setClock('timer', deadline); 
 
     // Modal
-    function Modal() {
+    function modal() {
         let more = document.querySelector('.more'),                     //подробнее
             overlay = document.querySelector('.overlay'),               //само окно
             close = document.querySelector('.popup-close'),             //крестик
@@ -124,7 +124,7 @@ window.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-    Modal();
+    modal();
 
     // Forms
     //создаём объект, в котором будут различные данные нашего запроса, мы используем текстовый формат, хотя
@@ -179,13 +179,13 @@ window.addEventListener('DOMContentLoaded', function() {
 
     form2.addEventListener('submit', function(event) {
         event.preventDefault();
-        form.appendChild(statusMessage);
+        form2.appendChild(statusMessage);
 
         let request = new XMLHttpRequest();
         request.open('POST', 'server.php');
         request.setRequestHeader('Content-Type', 'application/json', 'charset=UTF-8');
 
-        let formData = new FormData(form);
+        let formData = new FormData(form2);
 
         let obj = {};
         formData.forEach(function(value, key) {
