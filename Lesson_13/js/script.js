@@ -270,7 +270,7 @@ window.addEventListener('DOMContentLoaded', function() {
         personsSum = 0,
         daysSum = 0,
         total = 0,
-        counterInput = document.querySelectorAll('.counter-block-input');
+        counterInput = document.querySelector('.counter');
 
         totalValue.innerHTML = 0;
 
