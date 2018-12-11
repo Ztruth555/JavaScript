@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   calculator();
   forms();
-  // modal();
+  modal();
   slider();
   tabs();
   timer();
